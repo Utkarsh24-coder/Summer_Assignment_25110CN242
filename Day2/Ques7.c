@@ -1,14 +1,14 @@
 #include<stdio.h>
 int main()
 {
-    int a,sum=0;
+    int a,mul=1;
     printf("Enter a number:");
     scanf("%d",&a);
     int no=a;
     while(a>0){
-        sum=sum+(a%10);
+        mul=mul*(a%10);
         a=a/10;
     }
-    printf("Sum of digits of %d is %d ",no,sum);
+    printf("Product of digits of %d is %d",no,mul);
     return 0;
 }
