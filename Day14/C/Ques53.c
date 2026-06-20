@@ -1,33 +1,30 @@
 #include <stdio.h>
 int main()
 {
-    int a, larg, sec_larg;
+    int element, a;
     printf("Enter length of array:");
     scanf("%d", &a);
-    int arr[a];
     printf("------------------------------------- \n");
+    int arr[a], is_found = 1;
     for (int i = 0; i < a; i++)
     {
         printf("Enter array element:");
         scanf("%d", &arr[i]);
     }
     printf("------------------------------------- \n");
-    larg = arr[0];
-    sec_larg = -99999;
-    for (int j = 1; j < a; j++)
+    printf("Enter element to be searched:");
+    scanf("%d", &element);
+    for (int j = 0; j < a; j++)
     {
-        if (arr[j] > larg)
+        if (arr[j] == element)
         {
-            larg = arr[j];
+            printf("Element found at position %d.", j + 1);
+            is_found = 0;
         }
     }
-    for (int k = 0; k < a; k++)
+    if (is_found)
     {
-        if (arr[k] > sec_larg && arr[k] != larg)
-        {
-            sec_larg = arr[k];
-        }
+        printf("Element not found!!");
     }
-    printf("Second largest element in array is %d.", sec_larg);
     return 0;
 }
