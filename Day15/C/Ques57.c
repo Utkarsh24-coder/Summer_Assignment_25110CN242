@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int n,k=0;
+    int n,a;
     printf("Enter length of Array:");
     scanf("%d",&n);
     int arr[n];
@@ -13,17 +13,12 @@ int main(){
         printf("%d ",arr[i]);
     }
     printf("\n");
-    for (int j=0;j<n;j++){
-        if(arr[j]!=0){
-            arr[k]=arr[j];
-            k++;
-        }
+    for (int j=0;j<n/2;j++){
+        a=arr[n-1-j];
+        arr[n-1-j]=arr[j];
+        arr[j]=a;
     }
-    while(k<n){
-        arr[k]=0;
-        k++;
-    }
-    printf("Array after moving zeros to end:");
+    printf("Array after reversing:");
     for(int j=0;j<n;j++){
         printf("%d ",arr[j]);
     }

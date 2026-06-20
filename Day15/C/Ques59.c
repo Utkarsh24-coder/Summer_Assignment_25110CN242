@@ -1,9 +1,9 @@
 #include<stdio.h>
 int main(){
-    int n,k=0;
+    int n;
     printf("Enter length of Array:");
     scanf("%d",&n);
-    int arr[n];
+    int arr[n+1];
     printf("Enter Array elements: \n");
     for (int i=0;i<n;i++){
         scanf("%d",&arr[i]);
@@ -13,17 +13,11 @@ int main(){
         printf("%d ",arr[i]);
     }
     printf("\n");
-    for (int j=0;j<n;j++){
-        if(arr[j]!=0){
-            arr[k]=arr[j];
-            k++;
-        }
+    for (int j=n-1;j>=0;j--){
+        arr[j+1]=arr[j];
     }
-    while(k<n){
-        arr[k]=0;
-        k++;
-    }
-    printf("Array after moving zeros to end:");
+    arr[0]=arr[n];
+    printf("Array after rotating right:");
     for(int j=0;j<n;j++){
         printf("%d ",arr[j]);
     }
