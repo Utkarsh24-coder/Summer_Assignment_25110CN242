@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int n,l,u;
+    int n,maxelement,maxfreq=0;
     printf("Enter length of Array:");
     scanf("%d",&n);
     int arr[n];
@@ -13,21 +13,20 @@ int main(){
         printf("%d ",arr[i]);
     }
     printf("\n");
-    printf("Enter the range (lower upper):");
-    scanf("%d %d",&l,&u);
-    printf("Missing number:");
-    for (int i=l;i<=u;i++){
-        int found=0;
+    for(int i=0;i<n;i++){
+        int count=0;
         for (int j=0;j<n;j++){
-            if (arr[j]==i){
-                found=1;
-                break;
+            if(arr[i]==arr[j]){
+                count++;
             }
-    }
-    if(found==0){
-            printf("%d ",i);
+        }
+        if(count>maxfreq){
+            maxfreq=count;
+            maxelement=arr[i];
         }
     }
+    printf("The maximum frequency element is %d with frequency %d.",maxelement,maxfreq);
     printf("\n");
+    
     return 0;
 }

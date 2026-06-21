@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int n,l,u;
+    int n,sum;
     printf("Enter length of Array:");
     scanf("%d",&n);
     int arr[n];
@@ -13,21 +13,18 @@ int main(){
         printf("%d ",arr[i]);
     }
     printf("\n");
-    printf("Enter the range (lower upper):");
-    scanf("%d %d",&l,&u);
-    printf("Missing number:");
-    for (int i=l;i<=u;i++){
-        int found=0;
-        for (int j=0;j<n;j++){
-            if (arr[j]==i){
-                found=1;
-                break;
+    printf("Enter the value of sum:");
+    scanf("%d",&sum);
+    printf("\n");
+    printf("The pair with given sum %d is:\n",sum);
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]+arr[j]==sum){
+                printf("%d + %d = %d \n",arr[i],arr[j],sum);
             }
-    }
-    if(found==0){
-            printf("%d ",i);
         }
     }
     printf("\n");
+    
     return 0;
 }
