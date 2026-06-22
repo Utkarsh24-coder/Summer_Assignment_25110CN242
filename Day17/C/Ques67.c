@@ -26,7 +26,7 @@ int main(){
             temp ++;
         }
     }
-    printf("Common elements of Arrays are : \n");
+    printf("Array after intersection: \n");
     for(int i=0;i<temp;i++){
         printf("%d ",arr[i]);
     }
