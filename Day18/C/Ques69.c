@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int n,min,temp;
+    int n,temp;
     printf("Enter length of Array:");
     scanf("%d",&n);
     int arr[n];
@@ -9,19 +9,16 @@ int main(){
         scanf("%d",&arr[i]);
     }
     for(int i=0;i<n-1;i++){
-        min =i;
-        for(int j=i+1;j<n;j++){
-            if(arr[j]<arr[min]){
-            min=j;
+        for(int j=0;j<n-1;j++){
+            if(arr[j]<arr[j+1]){
+            temp=arr[j];
+            arr[j]=arr[j+1];
+            arr[j+1]=temp;
         }
         }
-        temp=arr[min];
-        arr[min]=arr[i];
-        arr[i]=temp;
-
         
     }
-    printf("Array after selection sorting:");
+    printf("Array after bubble sorting:");
     for(int j=0;j<n;j++){
         printf("%d ",arr[j]);
     }
