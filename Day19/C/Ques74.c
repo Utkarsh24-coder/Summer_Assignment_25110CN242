@@ -20,10 +20,10 @@ int main(){
     }
     for(int i=0;i<row;i++){
         for(int j=0;j<column;j++){
-            arr[i][j]=arr1[i][j] + arr2[i][j];
+            arr[i][j]=arr1[i][j] - arr2[i][j];
         }
     }
-    printf("Matrix after addition: \n");
+    printf("Matrix after subtraction: \n");
     for(int i=0;i<row;i++){
         for(int j=0;j<column;j++){
             printf("%d  ",arr[i][j]);
