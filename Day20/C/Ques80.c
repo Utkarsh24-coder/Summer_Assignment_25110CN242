@@ -16,12 +16,12 @@ int main()
     }
     for (int i = 0; i < r; i++)
     {
-        int row_sum = 0;
+        int col_sum = 0;
         for (int j = 0; j < c; j++)
         {
-            row_sum += arr[i][j];
+            col_sum += arr[j][i];
         }
-        printf("Sum of %dth row : %d \n", i + 1, row_sum);
+        printf("Sum of %dth column : %d \n", i + 1, col_sum);
     }
     return 0;
 }
