@@ -19,8 +19,8 @@ int main() {
                 count++;
         }
 
-        if (count == 1) {
-            printf("First non-repeating character: %c", str[i]);
+        if (count != 1) {
+            printf("First repeating character: %c", str[i]);
             return 0;
         }
     }
